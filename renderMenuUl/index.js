@@ -28,7 +28,7 @@ class RenderMenuUl extends Component {
                 <h3>{titleList}</h3>
                 <ul className={classList}>
                     {linksMenu.map(function (linkMenu) {
-                        return <RenderMenuList link={linkMenu.link} linkName={linkMenu.linkName} />
+                        return <RenderMenuList link={linkMenu.link} linkName={linkMenu.linkName} key={linkMenu.link} />
                     })}
                 </ul>
             </div>
