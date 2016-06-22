@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './renderMenuUl.css';
+import RenderMenuList from '../RenderMenuList';
 
 class RenderMenuUl extends Component {
 
@@ -13,7 +14,7 @@ class RenderMenuUl extends Component {
             classList: 'sandybrown'
         };
     }
-    //{this.RenderMenuList()}
+
     render() {
         const { classList } = this.state;
         const { titleList } = this.props;
@@ -26,9 +27,9 @@ class RenderMenuUl extends Component {
             <div>
                 <h3>{titleList}</h3>
                 <ul className={classList}>
-                    {linksMenu.map(function(linkMenu) {
-                        return <a href={linkMenu.link}>{linkMenu.linkName}</a>
-                    })};
+                    {linksMenu.map(function (linkMenu) {
+                        return <RenderMenuList link={linkMenu.link} linkName={linkMenu.linkName} />
+                    })}
                 </ul>
             </div>
         );
